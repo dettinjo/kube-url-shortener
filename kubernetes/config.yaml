@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  SHORTENER_SERVICE_PORT: "8000"
+  AUTH_SERVICE_PORT: "8001"
+  AUTH_SERVICE_HOST: "auth-service"
+  DB_MOUNT_POINT: "/var/data"
+  DB_NAME_AUTH: "users.db"
+  DB_NAME_SHORTENER: "urls.db"
+  DEBUG_MODE: "False"

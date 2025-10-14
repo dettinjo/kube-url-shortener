@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "02338354-5604-49df-ae7f-758ee4bd21e9",
+		"name": "Group20 Microservices Collection",
+		"description": "Collection of requests for the Authentication Service and URL Shortener Service.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14246609"
+	},
+	"item": [
+		{
+			"name": "Authentication Service",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{auth_host}}/users",
+							"protocol": "http",
+							"host": [
+								"{{auth_host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"alice\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://{{auth_host}}/users",
+							"protocol": "http",
+							"host": [
+								"{{auth_host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User (Obtain Token)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"alice\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://{{auth_host}}/users/login",
+							"protocol": "http",
+							"host": [
+								"{{auth_host}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User (Verify Existing Token)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiYXV0aCIsICJuYW1lIjogImFsaWNlIiwgImFkbWluIjogdHJ1ZX0.Hx6-VOK0yd7Ej0pKGHNRNMFZ-aUd2ylwFpD8DSjPxBE\"\n}"
+						},
+						"url": {
+							"raw": "http://{{auth_host}}/users/login",
+							"protocol": "http",
+							"host": [
+								"{{auth_host}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"alice\",\n  \"old-password\": \"password123\",\n  \"new-password\": \"newPass123\"\n}"
+						},
+						"url": {
+							"raw": "http://{{auth_host}}/users",
+							"protocol": "http",
+							"host": [
+								"{{auth_host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "URL Shortener Service",
+			"item": [
+				{
+					"name": "Get All Short IDs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiYXV0aCIsICJuYW1lIjogImFsaWNlIiwgImFkbWluIjogdHJ1ZX0.Hx6-VOK0yd7Ej0pKGHNRNMFZ-aUd2ylwFpD8DSjPxBE"
+							}
+						],
+						"url": {
+							"raw": "http://{{shortener_host}}/",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Short ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiYXV0aCIsICJuYW1lIjogImFsaWNlIiwgImFkbWluIjogdHJ1ZX0.Hx6-VOK0yd7Ej0pKGHNRNMFZ-aUd2ylwFpD8DSjPxBE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://{{shortener_host}}/",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Short ID (Custom)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiYXV0aCIsICJuYW1lIjogImFsaWNlIiwgImFkbWluIjogdHJ1ZX0.Hx6-VOK0yd7Ej0pKGHNRNMFZ-aUd2ylwFpD8DSjPxBE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://example.com\",\n  \"short_id\": \"f7gD2I\"\n}"
+						},
+						"url": {
+							"raw": "http://{{shortener_host}}/",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Short URL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{shortener_host}}/myCustomID",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								"myCustomID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Short URL",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://updated-example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://{{shortener_host}}/abc123",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								"abc123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Short URL",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{shortener_host}}/abc123",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								"abc123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get URL Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{shortener_host}}/stats/abc123",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								"stats",
+								"abc123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Short URLs",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{shortener_host}}/",
+							"protocol": "http",
+							"host": [
+								"{{shortener_host}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "auth_host",
+			"value": "assignment.897000.xyz/auth",
+			"type": "string"
+		},
+		{
+			"key": "shortener_host",
+			"value": "assignment.897000.xyz/shortener",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "not_set",
+			"type": "string"
+		}
+	]
+}

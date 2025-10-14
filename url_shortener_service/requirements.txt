@@ -1,0 +1,4 @@
+flask
+regex
+validators
+requests

@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  auth_service:
+    build:
+      context: ./auth_service
+      dockerfile: Dockerfile
+    working_dir: /app/auth_service
+    ports:
+      - "${AUTH_SERVICE_PORT}:${AUTH_SERVICE_PORT}"
+    environment:
+      - AUTH_SERVICE_PORT=${AUTH_SERVICE_PORT}
+      - DB_MOUNT_POINT=${DB_MOUNT_POINT}
+      - DB_NAME_AUTH=${DB_NAME_AUTH}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+    volumes:
+      - db_auth_data:/var/data
+
+  url_shortener_service:
+    build:
+      context: ./url_shortener_service
+      dockerfile: Dockerfile
+    working_dir: /app/url_shortener_service
+    ports:
+      - "${SHORTENER_SERVICE_PORT}:${SHORTENER_SERVICE_PORT}"
+    environment:
+      - SHORTENER_SERVICE_PORT=${SHORTENER_SERVICE_PORT}
+      - AUTH_SERVICE_HOST=auth_service
+      - DB_MOUNT_POINT=${DB_MOUNT_POINT}
+      - DB_NAME_SHORTENER=${DB_NAME_SHORTENER}
+    depends_on:
+      - auth_service
+    volumes:
+      - db_shortener_data:/var/data
+
+volumes:
+  db_auth_data:
+  db_shortener_data:

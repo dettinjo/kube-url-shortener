@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-shortener-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /var/nfs/url_shortener_service
+    server: 192.168.142.64
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-auth-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /var/nfs/auth_service
+    server: 192.168.142.64

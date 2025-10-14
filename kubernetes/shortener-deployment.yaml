@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: url-shortener-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: url-shortener-service
+  template:
+    metadata:
+      labels:
+        app: url-shortener-service
+    spec:
+      containers:
+      - name: url-shortener-service
+        image: dettinjo/url_shortener_service:v2
+        ports:
+        - containerPort: 8000
+        env:
+        - name: SHORTENER_SERVICE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: SHORTENER_SERVICE_PORT
+        - name: AUTH_SERVICE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: AUTH_SERVICE_HOST
+        - name: AUTH_SERVICE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: AUTH_SERVICE_PORT
+        - name: DB_MOUNT_POINT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: DB_MOUNT_POINT
+        - name: DB_NAME_SHORTENER
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: DB_NAME_SHORTENER
+        volumeMounts:
+        - name: db-storage
+          mountPath: /var/data
+      volumes:
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: db-shortener-pvc
