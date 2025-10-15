@@ -1,7 +1,7 @@
 # RESTful URL Shortener
 ![Licence](https://img.shields.io/badge/Licence-MIT-green?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/aujee/Group20_web_service_3?style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/aujee/Group20_web_service_3?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/dettinjo/kube-url-shortener?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/dettinjo/kube-url-shortener?style=for-the-badge)
 
 <!-- TABLE OF CONTENTS -->
 <details>
