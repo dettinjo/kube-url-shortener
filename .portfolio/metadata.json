@@ -6,5 +6,17 @@
   "publishLink": true,
   "liveUrl": null,
   "repoUrl": "https://github.com/dettinjo/kube-url-shortener",
-  "tags": ["Kubernetes", "Python", "Flask", "Docker", "NGINX", "cert-manager", "SSL/TLS", "NFS", "Ingress", "Microservices"]
+  "tags": [
+    "Kubernetes",
+    "Python",
+    "Flask",
+    "Docker",
+    "NGINX",
+    "cert-manager",
+    "SSL/TLS",
+    "NFS",
+    "Ingress",
+    "Microservices"
+  ],
+  "description": "A production-grade URL shortener deployed on Kubernetes with automated TLS, NGINX ingress, and persistent NFS storage."
 }
