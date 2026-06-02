@@ -18,5 +18,8 @@
     "Ingress",
     "Microservices"
   ],
-  "description": "A production-grade URL shortener deployed on Kubernetes with automated TLS, NGINX ingress, and persistent NFS storage."
+  "description": "A production-grade URL shortener deployed on Kubernetes with automated TLS, NGINX ingress, and persistent NFS storage.",
+  "titleDe": "Kubernetes URL-Kürzer",
+  "descriptionDe": "Ein produktionsreifer URL-Kürzungsdienst auf Kubernetes mit automatischem TLS, NGINX Ingress und persistentem NFS-Speicher.",
+  "projectTypeDe": "DevOps & Cloud"
 }
