@@ -1,8 +1,14 @@
+<!-- portfolio:date=2023-12-15 -->
+
 [Deutsch](README.de.md) · [English](README.md)
 
 # Kubernetes URL-Kürzer
 
 Ein produktionsreifer URL-Kürzungsdienst, der als praktische Übung in Kubernetes-Orchestrierung und Cloud-nativen Deployment-Mustern entwickelt wurde. Das Projekt geht über eine einfache Webanwendung hinaus — der Schwerpunkt liegt auf dem vollständigen Kubernetes-Deployment-Stack inklusive persistentem Speicher, TLS-Terminierung und automatischem Zertifikatsmanagement.
+
+<p align="center">
+  <img src="docs/docker.svg" alt="Docker" width="170" />
+</p>
 
 ### Architektur
 
