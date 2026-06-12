@@ -7,7 +7,7 @@
 A production-grade URL shortening service built as a practical exercise in Kubernetes orchestration and cloud-native deployment patterns. The project goes beyond a simple web app — the primary focus is the full Kubernetes deployment stack, including persistent storage, TLS termination, and automated certificate management.
 
 <p align="center">
-  <img src="docs/docker.svg" alt="Docker" width="170" />
+  <img src="docs/kubernetes.svg" alt="Kubernetes" width="170" />
 </p>
 
 ### Architecture
