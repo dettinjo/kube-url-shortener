@@ -7,7 +7,7 @@
 Ein produktionsreifer URL-Kürzungsdienst, der als praktische Übung in Kubernetes-Orchestrierung und Cloud-nativen Deployment-Mustern entwickelt wurde. Das Projekt geht über eine einfache Webanwendung hinaus — der Schwerpunkt liegt auf dem vollständigen Kubernetes-Deployment-Stack inklusive persistentem Speicher, TLS-Terminierung und automatischem Zertifikatsmanagement.
 
 <p align="center">
-  <img src="docs/docker.svg" alt="Docker" width="170" />
+  <img src="docs/kubernetes.svg" alt="Kubernetes" width="170" />
 </p>
 
 ### Architektur
