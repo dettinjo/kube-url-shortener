@@ -4,7 +4,7 @@
 
 # Kubernetes URL-Kürzer
 
-Ein produktionsreifer URL-Kürzungsdienst, der als praktische Übung in Kubernetes-Orchestrierung und Cloud-nativen Deployment-Mustern entwickelt wurde. Das Projekt geht über eine einfache Webanwendung hinaus — der Schwerpunkt liegt auf dem vollständigen Kubernetes-Deployment-Stack inklusive persistentem Speicher, TLS-Terminierung und automatischem Zertifikatsmanagement.
+Ein produktionsreifer URL-Kürzungsdienst auf Kubernetes mit automatisiertem TLS, NGINX-Ingress und persistentem NFS-Speicher.
 
 <p align="center">
   <img src="docs/kubernetes.svg" alt="Kubernetes" width="170" />
