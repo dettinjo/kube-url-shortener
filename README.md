@@ -4,7 +4,7 @@
 
 # Kubernetes URL Shortener
 
-A production-grade URL shortening service built as a practical exercise in Kubernetes orchestration and cloud-native deployment patterns. The project goes beyond a simple web app — the primary focus is the full Kubernetes deployment stack, including persistent storage, TLS termination, and automated certificate management.
+A production-grade URL shortener deployed on Kubernetes with automated TLS, NGINX ingress, and persistent NFS storage.
 
 <p align="center">
   <img src="docs/kubernetes.svg" alt="Kubernetes" width="170" />
